@@ -4,8 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, Paper, Scissors</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
 
-  <body></body>
+  <body>
+    <h1>PLEASE CHOOSE ROCK, PAPER, OR SCISSORS</h1>
+    <div id="choices">
+      <button onclick="playGame('rock')">Rock</button>
+      <button onclick="playGame('paper')">Paper</button>
+      <button onclick="playGame('scissors')">Scissors</button>
+    </div>
+
+    <div id="playerScore">PLAYER:</div>
+    <div id="computerScore">COMPUTER:</div>
+    <div id="resultDisplay"></div>
+  </body>
 </html>

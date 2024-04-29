@@ -1,3 +1,4 @@
+/*
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
   const randomIndex = Math.floor(Math.random() * choices.length);
@@ -26,8 +27,35 @@ function playGame() {
   console.log(playRound(playerSelection, computerSelection));
 }
 
-playGame();
-playGame();
-playGame();
-playGame();
-playGame();
+//playGame();
+*/
+
+const choices = ["rock", "paper", "scissors"];
+const playerScore = document.getElementById("playerScore");
+const computerScore = document.getElementById("computerScore");
+const resultDisplay = document.getElementById("resultDisplay");
+
+function playGame(playerChoice) {
+  const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+  let result = "";
+
+  if (playerChoice === computerChoice) {
+    result = "IT'S A TIE!";
+  } else {
+    switch (playerChoice) {
+      case "rock":
+        result = computerChoice === "scissors" ? "YOU WIN!" : "YOU LOSE!";
+        break;
+      case "paper":
+        result = computerChoice === "rock" ? "YOU WIN!" : "YOU LOSE!";
+        break;
+      case "scissors":
+        result = computerChoice === "paper" ? "YOU WIN!" : "YOU LOSE!";
+        break;
+    }
+  }
+
+  playerScore.textContent = `PLAYER: ${playerChoice}`;
+  computerScore.textContent = `COMPUTER: ${computerChoice}`;
+  resultDisplay.textContent = result;
+}
